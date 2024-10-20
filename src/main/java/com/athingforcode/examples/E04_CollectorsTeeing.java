@@ -23,7 +23,7 @@ public class E04_CollectorsTeeing {
                                 Collectors.summarizingDouble(StudentResult::mathScore),
                                 // Second collector: summarize English scores
                                 Collectors.summarizingDouble(StudentResult::englishScore),
-                                // Merger function: combine results into ClassStatistics
+                                // Merger function: combine results from above collectors into ClassStatistics
                                 (mathStats, englishStats) -> new ClassStatistics(mathStats, englishStats)
                         )
                 );
